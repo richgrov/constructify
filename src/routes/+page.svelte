@@ -35,7 +35,7 @@
 	}
 
 	:global(body) {
-		background: url('background.png');
+		background: url('/background.png');
 		background-size: 50%;
 		height: 100%;
 	}
