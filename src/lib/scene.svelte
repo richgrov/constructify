@@ -36,7 +36,7 @@
 		scene.add(dirLight);
 
 		const material = new THREE.MeshLambertMaterial();
-		const terrain = new THREE.TextureLoader().load('/terrain.png');
+		const terrain = new THREE.TextureLoader().load('terrain.png');
 		terrain.wrapS = THREE.RepeatWrapping;
 		terrain.wrapT = THREE.RepeatWrapping;
 		terrain.magFilter = THREE.NearestFilter;
