@@ -1,6 +1,6 @@
 export default class Schematic {
-	private blocks: Array<number>;
-	private data: Array<number>;
+	public blocks: Array<number>;
+	public data: Array<number>;
 
 	constructor(public xSize: number, public ySize: number, public zSize: number) {
 		this.blocks = new Array(xSize * ySize * zSize).fill(0);
@@ -26,6 +26,6 @@ export default class Schematic {
 	}
 
 	getIndex(x: number, y: number, z: number): number {
-		return (y * this.ySize + z) * this.xSize + x;
+		return (y * this.zSize + z) * this.xSize + x;
 	}
 }
