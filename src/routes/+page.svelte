@@ -14,7 +14,7 @@
 		try {
 			const result = await generate({ prompt });
 			const jobId = result.data.jobId;
-			window.location.href = `./view?id=${jobId}`;
+			window.location.href = `view?id=${jobId}`;
 		} catch (err) {
 			console.error(err);
 		}
