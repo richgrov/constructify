@@ -23,7 +23,7 @@
 
 <div class="flex justify-center items-center flex-col h-4/5">
 	<h1 class="text-white text-5xl pb-10">constructify!</h1>
-	<div class="w-2/5">
+	<div class="w-4/5 max-w-2xl">
 		<Search onSubmit={submit} />
 	</div>
 </div>
