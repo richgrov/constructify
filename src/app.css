@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	height: 100%;
+	font-family: Ubuntu, sans-serif;
+}
+
 body {
+	height: 100%;
 	margin: 0;
 }

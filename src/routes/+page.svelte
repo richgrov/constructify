@@ -3,6 +3,7 @@
 	import Search from '../lib/search.svelte';
 	import '../firebase';
 	import { getFunctions, httpsCallable, connectFunctionsEmulator } from 'firebase/functions';
+	import { goto } from '$app/navigation';
 
 	const functions = getFunctions();
 	const generate = httpsCallable<{ prompt: string }, { jobId: string }>(functions, 'generate');
@@ -17,7 +18,8 @@
 		try {
 			const result = await generate({ prompt });
 			const jobId = result.data.jobId;
-			window.location.href = `${window.location.pathname}/view?id=${jobId}`;
+			loading = false;
+			goto(`/view?id=${jobId}`);
 		} catch (err) {
 			console.error(err);
 		} finally {
@@ -26,22 +28,11 @@
 	}
 </script>
 
-<div class="flex justify-center items-center flex-col h-4/5">
-	<h1 class="text-white text-5xl pb-10">constructify!</h1>
-	<div class="w-2/5">
-		<Search onSubmit={submit} loading={loading} />
+<div style="background: url('/background.png');" class="h-full">
+	<div class="flex justify-center items-center flex-col h-4/5">
+		<h1 class="text-white text-5xl pb-10">constructify!</h1>
+		<div class="w-2/5">
+			<Search onSubmit={submit} loading={loading} />
+		</div>
 	</div>
 </div>
-
-<style>
-	:global(html) {
-		height: 100%;
-		font-family: Ubuntu, sans-serif;
-	}
-
-	:global(body) {
-		background: url('/background.png');
-		background-size: 50%;
-		height: 100%;
-	}
-</style>

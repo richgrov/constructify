@@ -44,15 +44,3 @@
 {:else}
 	<h1>{status}</h1>
 {/if}
-
-<style>
-	:global(html) {
-		height: 100%;
-	}
-
-	:global(body) {
-		background-color: #222;
-		color: white;
-		height: 100%;
-	}
-</style>
